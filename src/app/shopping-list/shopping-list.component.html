@@ -1,0 +1,27 @@
+<div class="row">
+  <div class="col-xs-12">
+    <!-- <app-shopping-edit></app-shopping-edit> -->
+    <hr>
+    <div class="panel-group" id="accordion">
+      <div class="panel panel-default" *ngFor="let ingre of ingredients; let i = index">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="{{ '#'+i}}">
+              {{ ingre.name }} </a>
+          </h4>
+        </div>
+        <div id="{{ i }}" class="panel-collapse collapse" in>
+          <div class="panel-body">
+          <app-progress *ngIf="i==0"></app-progress>
+          <app-completed *ngIf="i==1"></app-completed>
+          <app-failed *ngIf="i==2"></app-failed>
+          <app-started *ngIf="i>2"></app-started>
+          
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
